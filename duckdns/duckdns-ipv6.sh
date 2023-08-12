@@ -1,14 +1,13 @@
 #!/bin/bash
 # duckdns-ipv6.sh
 # Example
-# ~/duckdns/duckdns-ipv6.sh mydomain.duckdns.org 00000000-0000-0000-0000-000000000000 eth0 ~/duckdns/duckdns.log
+# ~/duckdns/duckdns-ipv6.sh mydomain.duckdns.org 00000000-0000-0000-0000-000000000000 ~/duckdns/duckdns.log
 #
 # Only IPv6 at the moment
 
 domain=$1
 token=$2
-interface=$3
-logfile=$4
+logfile=$3
 
 service=duckdns.org
 
@@ -37,10 +36,10 @@ if [ -z "${testinterface}" ]; then
 fi
 
 
-ipv6addr=$(curl -s https://api6.apify.org)
+ipv6addr=$(curl -s "https://api6.apify.org")
 
 if [ -z "${ipv6addr}" ]; then
-        echo -e "${currentdate} empty IPv6 address for ${interface}" >>${logfile}
+        echo -e "${currentdate} empty IPv6 address" >>${logfile}
         exit 1
 fi
 
