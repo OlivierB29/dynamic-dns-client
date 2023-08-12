@@ -36,7 +36,7 @@ if [ -z "${testinterface}" ]; then
 fi
 
 
-ipv6addr=$(curl -s "https://api6.apify.org")
+ipv6addr=$(curl -6 -s "https://api6.ipify.org")
 
 if [ -z "${ipv6addr}" ]; then
         echo -e "${currentdate} empty IPv6 address" >>${logfile}
@@ -44,5 +44,5 @@ if [ -z "${ipv6addr}" ]; then
 fi
 
 apiurl="https://www.duckdns.org/update?domains=${domain}&token=${token}&ipv6=${ipv6addr}"
-curlresult=$(curl -s ${apiurl})
+curlresult=$(curl -6 -s ${apiurl})
 echo -e "${currentdate} ${apiurl} ${curlresult}"  >>${logfile}
