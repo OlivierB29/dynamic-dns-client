@@ -37,7 +37,7 @@ if [ -z "${testinterface}" ]; then
 fi
 
 
-ipv6addr=$(ip addr show dev ${interface} | grep global | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d')
+ipv6addr=$(curl -s https://api6.apify.org)
 
 if [ -z "${ipv6addr}" ]; then
         echo -e "${currentdate} empty IPv6 address for ${interface}" >>${logfile}
