@@ -28,14 +28,6 @@ if [[ "${token}" != *"-"* ]]; then
         exit 1
 fi
 
-testinterface=$(ip -o link show | awk '{print $2,$9}' | grep ${interface})
-
-if [ -z "${testinterface}" ]; then
-        echo -e "${currentdate} interface not found ${interface}" >>${logfile}
-        exit 1
-fi
-
-
 ipv6addr=$(curl -6 -s "https://api6.ipify.org")
 
 if [ -z "${ipv6addr}" ]; then
