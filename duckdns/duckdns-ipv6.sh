@@ -59,7 +59,6 @@ if [ ! -f "$lastipv6file" ]; then
         exit 0
 fi
 
-echo -e "$lastipv6file exists." >>${logfile}
 lastipv6value=$(<${lastipv6file})
 
 if [[ "${lastipv6value}" == "${ipv6addr}" ]]; then
