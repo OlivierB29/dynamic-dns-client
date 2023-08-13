@@ -1,2 +1,2 @@
 #!/bin/bash
-~/duckdns/duckdns-ipv6.sh mydomain.duckdns.org 00000000-0000-0000-0000-000000000000
+~/ipv64dns/ipv64dns-ipv6.sh mydomain.ipv64.net 0000000000000
